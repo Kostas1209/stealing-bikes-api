@@ -3,6 +3,10 @@ import * as mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const BikesSchema = Schema({
+    userId : {
+        type: Number,
+        required : true
+    },
     model : {
         type: String,
         required: true,
