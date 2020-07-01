@@ -5,11 +5,11 @@ import { GetPollicerTaskRepository, ChangePollicerTaskRepository } from './admin
 export async function GetAdminTask(req: Request, resp: Response)
 {
     try{
-        console.log(req.body)
-        let adminId = req.body.adminId
+        console.log(req.query)
+        let adminId = req.query.adminId
         console.log(`Admin Id ${adminId}`);
-        let task = GetPollicerTaskRepository(adminId);
-
+        let task = await GetPollicerTaskRepository(adminId);
+        console.log(task)
         return resp.status(200).send({
             success: true,
             data: task

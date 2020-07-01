@@ -7,7 +7,7 @@ const TasksSchema = Schema({
         type: String,
         required : true
     },
-    policerId:{
+    pollicerId:{
         type: String,
         required : true
     },
@@ -20,8 +20,7 @@ const TasksSchema = Schema({
         required : true
     },
     endDate:{
-        type: Date,
-        required : true
+        type: Date
     }
 });
 

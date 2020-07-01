@@ -1,6 +1,7 @@
 import express = require('express');
 import config from '../config';
 import api from './features';
+import './db';
 
 
 const app = express();
