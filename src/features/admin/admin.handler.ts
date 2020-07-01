@@ -1,4 +1,5 @@
 import { Request, Response, } from 'express';
+import { GetPollicerTaskRepository, ChangePollicerTaskRepository } from './admin.repository';
 
 
 export async function GetAdminTask(req: Request, resp: Response)
@@ -7,11 +8,11 @@ export async function GetAdminTask(req: Request, resp: Response)
         console.log(req.body)
         let adminId = req.body.adminId
         console.log(`Admin Id ${adminId}`);
-        // repository method
+        let task = GetPollicerTaskRepository(adminId);
 
         return resp.status(200).send({
             success: true,
-            data: "Success"
+            data: task
         })
     }
     catch(error)
@@ -30,7 +31,7 @@ export async function ChangeAdminTask(req: Request, resp: Response)
         console.log(req.body)
         let adminId = req.body.adminId
         console.log(`Admin Id ${adminId}`);
-        // repository method change 
+        ChangePollicerTaskRepository(adminId);
 
         return resp.status(200).send({
             success: true,
