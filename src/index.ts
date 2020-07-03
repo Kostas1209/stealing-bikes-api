@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 
 app.use('/api', api)
-const port = config.port || 3000;
+const port = process.env.PORT || config.port;
 app.listen(port, err=>{
     if(err)
     {
