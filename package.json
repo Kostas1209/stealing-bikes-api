@@ -4,7 +4,7 @@
   "description": "My project ",
   "scripts": {
     "build": "rimraf ./build && tsc",
-    "start" : "npm run build && node dist/src/index.js",
+    "start": "npm run build && node dist/src/index.js",
     "start:dev": "nodemon ./src/index.ts"
   },
   "author": "Kostya",
@@ -15,6 +15,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.20",
     "node": "^14.5.0",
+    "rimraf": "^3.0.2",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.5"
   }
