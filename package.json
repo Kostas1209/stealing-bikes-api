@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "My project ",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm i & nodemon ./src/index.ts"
+    "build": "rimraf ./build && tsc",
+    "start" : "npm run build && node dist/src/index.js",
+    "start:dev": "nodemon ./src/index.ts"
   },
   "author": "Kostya",
   "license": "ISC",
