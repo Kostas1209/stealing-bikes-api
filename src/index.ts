@@ -2,6 +2,7 @@ import express = require('express');
 import config from '../config';
 import api from './features';
 import './db';
+require('dotenv').config()
 const cors = require("cors");
 
 
@@ -10,12 +11,13 @@ const app = express();
 app.use(cors());
 
 app.use('/api', api)
-app.listen(config.port, err=>{
+const port = config.port || 3000;
+app.listen(port, err=>{
     if(err)
     {
         console.log(err)
         return err
     }
 
-    console.log(`Server is listening on ${config.port}`);
+    console.log(`Server is listening on ${port}`);
 })

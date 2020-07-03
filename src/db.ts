@@ -6,9 +6,9 @@ import config from '../config';
 // Connecting to the database
 export default (async () => {
   try {
-    await mongoose.connect(`${config.db_url}`, { useNewUrlParser: true });
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/stolen-bikes', { useNewUrlParser: true });
     // listen for requests
-    console.log(`The Conection to database is Ok ${config.db_url}`);
+    console.log(`The Conection to database is Ok ${process.env.MONGODB_URI}`);
   } catch (err) {
     console.log(err);
     console.log(`${err} Could not Connect to the Database. Exiting Now...`);
