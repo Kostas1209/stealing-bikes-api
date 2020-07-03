@@ -2,9 +2,7 @@ export default {
     port : 8000,
     host : "0.0.0.0",
 
-    db_port : 27017,
-    db_host: `mongodb://localhost`,
-    db_name: "stolen_bikes",
+    db_url : "mongodb+srv://Admin:veronika2007@cluster0.oh64r.gcp.mongodb.net/stolen-bikes?retryWrites=true&w=majority",
 
     salt_bcrypt: 10,
 
