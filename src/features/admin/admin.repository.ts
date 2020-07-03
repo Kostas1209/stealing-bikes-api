@@ -14,7 +14,7 @@ export async function GetPollicerTaskRepository(adminId : number | string)
 export async function ChangePollicerTaskRepository(adminId : number | string)
 {
     //let task = await Tasks.find( {"policerId" : adminId} )
-    await Tasks.findOneAndUpdate({"pollicerId" : adminId}, {isDone : true, endDate: new Date()});
+    await Tasks.findOneAndUpdate({"pollicerId" : adminId, isDone : false}, {isDone : true, endDate: new Date()});
     let task = await GetFreeTask();
     console.log(task)
     if(task)

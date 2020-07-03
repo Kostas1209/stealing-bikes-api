@@ -7,9 +7,10 @@ export async function GetFreePollicer() : Promise<Pollicer>
     return Pollicers.findOne({"isFree": true});
 }
 
-export function GetFreeTask()
+export async function GetFreeTask()
 {
-    return Tasks.findOne({"pollicerId": "none", "isDone" : false});
+    let task = await Tasks.findOne({"pollicerId": "none", "isDone" : false});
+    return task
 }
 
 export async function SetPollicerOnTask(taskId, adminId)

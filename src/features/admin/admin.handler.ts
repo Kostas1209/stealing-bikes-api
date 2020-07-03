@@ -31,7 +31,7 @@ export async function ChangeAdminTask(req: Request, resp: Response)
         console.log(req.body)
         let adminId = req.body.adminId
         console.log(`Admin Id ${adminId}`);
-        ChangePollicerTaskRepository(adminId);
+        await ChangePollicerTaskRepository(adminId);
 
         return resp.status(200).send({
             success: true,
